@@ -1,0 +1,45 @@
+.header {
+    height: 85px;
+    width: 100%;
+    padding: 0 10px;
+    background-color: var(--light-color);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.header .container .logo {
+    height: 70px;
+    width: 70px;
+    overflow: hidden;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+}
+
+.navbar li {
+    margin: 0 5px;
+}
+
+.navbar .btn {
+    width: 100px;
+    text-align: center;
+    padding: 2px 20px;
+}
+
+.navbar .nav-item {
+    font-size: 1.4rem;
+}
+
+.navbar .nav-item:hover {
+    border-bottom: 2px solid var(--primary-color);
+    cursor: pointer;
+    color: var(--primary-color)
+}
+

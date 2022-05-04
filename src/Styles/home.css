@@ -1,0 +1,86 @@
+.heroImg {
+  position: relative;
+  height: calc(100vh - 85px);
+  overflow: hidden;
+}
+
+.heroImg img {
+  filter: brightness(70%);
+}
+
+.heroImg .heroText {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  color: var(--light-color);
+  text-align: center;
+}
+
+.heroImg .card {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.heroText h1 {
+    font-family: var(--nuka-font), sans-serif;
+    color: var(--light-color);
+    font-size: 4rem;
+}
+
+.heroText p {
+    font-size: 2.5rem;
+    width: 400px;
+}
+
+.heroText button {
+    color: var(--light-color);
+    border: 2px var(--light-color) solid;
+    font-size: 2rem;
+    padding: 5px 30px;
+}
+
+.ad-card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px 30px;
+}
+
+.ad-card .card {
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  align-items: center;
+  box-shadow: 10px 10px 5px 5px rgba(0,0,0,0.6);
+}
+
+.ad-card p {
+  font-size: 30px;
+  width: 300px;
+  text-align: center;
+}
+
+.ad-image {
+  width: 300px;
+  height: 100%;
+  display: flex;
+}
+
+.ad-image img {
+  border-radius: 5px;
+}
+
+.ad-p-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.ad-p-btn button {
+  width: 80%;
+  height: 30px;
+  font-size: 20px;
+  padding: 0 0;
+}
