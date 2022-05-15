@@ -1,0 +1,226 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "companyName": "Nuka-Hallmark-WV",
+      "companyStreetAddress": {
+        "street": "435 W Nuke Drive",
+        "city": "Hallmark",
+        "state": "WV",
+        "zip": "31451"
+      },
+      "phoneNumber": "000000000",
+      "email": "admin@nuka.com",
+      "password": "NukaHM",
+      "isAdmin": true
+    },
+    {
+      "id": 2,
+      "companyName": "Q-Mart",
+      "companyStreetAddress": {
+        "street": "1234 Passby Lane",
+        "city": "Northport",
+        "state": "TN",
+        "zip": "38444"
+      },
+      "phoneNumber": "6153339090",
+      "email": "qmart@io.com",
+      "password": "qmart",
+      "isAdmin": false
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "productName": "Nuka-Cola",
+      "productDescription": "The most popular soft drink in the Uninted States. Classic look and classic taste that the whole family can enjoy.",
+      "productImage": ""
+    },
+    {
+      "id": 2,
+      "productName": "Nuka-Cherry",
+      "productDescription": "Nuka-Cherry Description",
+      "productImage": ""
+    },
+    {
+      "id": 3,
+      "productName": "Nuka-Cola Cranberry",
+      "productDescription": "Nuka-Cola Cranberry Description",
+      "productImage": ""
+    },
+    {
+      "id": 4,
+      "productName": "Nuka-Cola Dark",
+      "productDescription": "Nuka-Cola Dark Description",
+      "productImage": ""
+    },
+    {
+      "id": 5,
+      "productName": "Nuka-Grape",
+      "productDescription": "Nuka-Grape Description",
+      "productImage": ""
+    },
+    {
+      "id": 6,
+      "productName": "Nuka-Cola Orange",
+      "productDescription": "Nuka-Orange Description",
+      "productImage": ""
+    },
+    {
+      "id": 7,
+      "productName": "Nuka-Cola Quantum",
+      "productDescription": "Nuka-Cola Quantum Description",
+      "productImage": ""
+    },
+    {
+      "id": 8,
+      "productName": "Nuka-Cola Quartz",
+      "productDescription": "Nuka-Cola Quartz Description",
+      "productImage": ""
+    },
+    {
+      "id": 9,
+      "productName": "Nuka-Cola Victoy",
+      "productDescription": "Nuka-Cola Victoy Description",
+      "productImage": ""
+    },
+    {
+      "id": 10,
+      "productName": "Nuka-Cola Wild",
+      "productDescription": "Nuka-Cola Wild Description",
+      "productImage": ""
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 2,
+      "orderedProducts": [
+        {
+          "productId": 1,
+          "productQuantity": 20
+        },
+        {
+          "productId": 5,
+          "productQuantity": 5
+        },
+        {
+          "productId": 6,
+          "productQuantity": 10
+        }
+      ],
+      "orderPlacedDate": 1,
+      "expectedReceivedDate": 1,
+      "status": "Completed"
+    },
+    {
+      "userId": 2,
+      "orderedProducts": [
+        {
+          "productId": 1,
+          "productQuantity": 10
+        },
+        {
+          "productId": 7,
+          "productQuantity": 10
+        }
+      ],
+      "orderPlacedDate": 1652235786540,
+      "expectedReceivedDate": 1652236218540,
+      "status": "Pending",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "orderedProducts": [
+        {
+          "productId": 1,
+          "productQuantity": 10
+        }
+      ],
+      "orderPlacedDate": 1652236162357,
+      "expectedReceivedDate": 1652236594357,
+      "status": "Pending",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "orderedProducts": [
+        {
+          "productId": 1,
+          "productQuantity": 10
+        }
+      ],
+      "orderPlacedDate": 1652236205473,
+      "expectedReceivedDate": 1652668205473,
+      "status": "Pending",
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "orderedProducts": [
+        {
+          "productId": 8,
+          "productQuantity": 10
+        },
+        {
+          "productId": 5,
+          "productQuantity": 10
+        }
+      ],
+      "orderPlacedDate": 1652236277059,
+      "expectedReceivedDate": 1652668277059,
+      "status": "Pending",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "orderedProducts": [
+        {
+          "productId": 1,
+          "productQuantity": 1
+        },
+        {
+          "productId": 2,
+          "productQuantity": 1
+        },
+        {
+          "productId": 3,
+          "productQuantity": 1
+        },
+        {
+          "productId": 4,
+          "productQuantity": 1
+        },
+        {
+          "productId": 5,
+          "productQuantity": 1
+        },
+        {
+          "productId": 6,
+          "productQuantity": 1
+        },
+        {
+          "productId": 7,
+          "productQuantity": 1
+        },
+        {
+          "productId": 8,
+          "productQuantity": 1
+        },
+        {
+          "productId": 9,
+          "productQuantity": 1
+        },
+        {
+          "productId": 10,
+          "productQuantity": 1
+        }
+      ],
+      "orderPlacedDate": 1652641970589,
+      "expectedReceivedDate": 1653073970589,
+      "status": "Pending",
+      "id": 6
+    }
+  ]
+}

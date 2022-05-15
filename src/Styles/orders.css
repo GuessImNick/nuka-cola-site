@@ -1,0 +1,106 @@
+.order-card {
+    width: auto;
+    margin: 15px 10px;
+}
+
+.order-card h1 {
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.order-container {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    margin: 10px;
+    width: 25%;
+    height: 400px;
+    flex-basis: 30%;
+}
+
+.order-form-container {
+    display: flex;
+}
+
+.order-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.order-form label {
+    font-size: 30px;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.order-form input {
+    margin-left: 10px;
+}
+
+.order-form .btn {
+    margin-left: 5px;
+}
+
+.order-form-product {
+    width: 100%;
+    border-bottom: 1px black solid;
+    margin-bottom: 5px;
+}
+
+.shopping-cart {
+    width: 50%;
+    margin-left: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.shopping-cart-container {
+    border-top: 2px solid black;
+    height: 100%;
+}
+
+.order-form-product {
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    justify-self: center;
+}
+
+.order-form-btn {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.shopping-cart .btn {
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.active-order-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.shopping-cart-container .btn {
+    border: none;
+    border-radius: 5px;
+    padding: 0;
+    background-color: #fff;
+    color: red;
+    font-size: 16px;
+    font-weight: 700;
+}

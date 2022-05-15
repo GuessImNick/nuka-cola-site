@@ -3,6 +3,8 @@
 @import url('Styles/utilities.css');
 @import url('Styles/header.css');
 @import url('Styles/home.css');
+@import url('Styles/modal.css');
+@import url('Styles/orders.css');
 
 :root {
   --primary-color: #e61d2b;

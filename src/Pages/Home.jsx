@@ -6,7 +6,6 @@ const Home = () => {
   let navigate = useNavigate()
   return (
     <>
-      <Header />
       <section className="showcase">
         <div className="heroImg">
           <img src={require("../Assets/Images/NukaColaBG.jpg")} />
@@ -42,7 +41,7 @@ const Home = () => {
                 Would you like to have our product on you shelves! Sign-up and
                 order and begin selling flavor!
               </p>
-              <button className="btn" onClick={() => navigate('/')}>Order Today</button>
+              <button className="btn" onClick={() => navigate('/orders')}>Order Today</button>
             </div>
           </div>
         </div>

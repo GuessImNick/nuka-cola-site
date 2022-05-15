@@ -4,7 +4,6 @@ import Header from "../Components/Header";
 const Products = () => {
   return (
     <>
-      <Header />
       <p>Product Info</p>
     </>
   );
