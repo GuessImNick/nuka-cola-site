@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import OrderContainer from "../../Components/OrderContainer";
 import { API_CALLS } from "../../Data Acess/API_CALLS";
+import OrderDetailModal from "../../modals/OrderDetailModal";
 import OrderForm from "./OrderForm";
 
 const UserOrders = ({ user }) => {
@@ -9,6 +10,8 @@ const UserOrders = ({ user }) => {
   const [activeOrders, setActiveOrders] = useState([]);
   const [completedOrders, setCompletedOrders] = useState([]);
   const [shoppingCart, setShoppingCart] = useState([]);
+  const [orderDetailModalShow, setOrderDetailModalShow] = useState(false);
+  const [selectedOrder, setSelectedOrder] = useState({});
 
   useEffect(() => {
     API_CALLS.fetchUserOrders(user).then((res) => setOrders(res));
@@ -24,7 +27,11 @@ const UserOrders = ({ user }) => {
 
   useEffect(() => {
     const currentCompletedOrders = orders.filter((order) => {
-      return order.status === "Completed" || order.status === "Cancelled" || order.status === "Denied"
+      return (
+        order.status === "Completed" ||
+        order.status === "Cancelled" ||
+        order.status === "Denied"
+      );
     });
 
     setCompletedOrders(currentCompletedOrders);
@@ -33,29 +40,50 @@ const UserOrders = ({ user }) => {
   return (
     <div className="orders-content">
       <div className="place-order-container card order-card">
-          <h1>Place An Order</h1>
-          <OrderForm products={products} user={user} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />
+        <h1>Place An Order</h1>
+        <OrderForm
+          products={products}
+          user={user}
+          shoppingCart={shoppingCart}
+          setShoppingCart={setShoppingCart}
+        />
       </div>
       <div className="active-orders card order-card">
         <h1>Active Orders</h1>
         <div className="active-order-list">
           {activeOrders.map((order) => (
             <div key={order.id} className="order-container">
-              <OrderContainer order={order} products={products} />
+              <OrderContainer
+                order={order}
+                products={products}
+                showDetail={() => setOrderDetailModalShow(true)}
+                selectOrder={setSelectedOrder}
+              />
             </div>
           ))}
         </div>
       </div>
       <div className="completed-orders card order-card">
-          <h1>Completed Orders</h1>
-          <div className="completed-order-list">
+        <h1>Completed Orders</h1>
+        <div className="completed-order-list">
           {completedOrders.map((order) => (
             <div key={order.id} className="order-container">
-              <OrderContainer order={order} products={products} />
+              <OrderContainer
+                order={order}
+                products={products}
+                showDetail={() => setOrderDetailModalShow(true)}
+                selectOrder={setSelectedOrder}
+              />
             </div>
           ))}
         </div>
       </div>
+      <OrderDetailModal
+        show={orderDetailModalShow}
+        onClose={() => setOrderDetailModalShow(false)}
+        selectedOrder={selectedOrder}
+        resetOrderState={setSelectedOrder}
+      />
     </div>
   );
 };

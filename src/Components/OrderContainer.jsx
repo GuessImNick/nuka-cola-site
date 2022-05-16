@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import OrderDetailModal from "../modals/OrderDetailModal";
 
-const OrderContainer = ({ order, products }) => {
-  const [orderDetailModalShow, setOrderDetailModalShow] = useState(false)
+const OrderContainer = ({ order, products, showDetail, selectOrder }) => {
   const productNameHelper = (productId) => {
     return products.find((product) => {
       return product.id === productId;
@@ -46,7 +44,8 @@ const OrderContainer = ({ order, products }) => {
             Status: {order.status}{" "}
             <button
               onClick={() => {
-                setOrderDetailModalShow(true)
+                showDetail()
+                selectOrder(order)
               }}
             >
               &#9432;
@@ -54,11 +53,6 @@ const OrderContainer = ({ order, products }) => {
           </li>
         </ul>
       </div>
-      <OrderDetailModal
-        show={orderDetailModalShow}
-        onClose={() => setOrderDetailModalShow(false)}
-        order={order}
-      />
     </>
   );
 };
