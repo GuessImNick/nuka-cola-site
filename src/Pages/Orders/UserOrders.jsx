@@ -16,7 +16,7 @@ const UserOrders = ({ user }) => {
   useEffect(() => {
     API_CALLS.fetchUserOrders(user).then((res) => setOrders(res));
     API_CALLS.fetchProducts().then((res) => setProducts(res));
-  }, [shoppingCart]);
+  }, [shoppingCart, selectedOrder]);
 
   useEffect(() => {
     const currentActiveOrders = orders.filter((order) => {
@@ -37,6 +37,28 @@ const UserOrders = ({ user }) => {
     setCompletedOrders(currentCompletedOrders);
   }, [orders]);
 
+  const activeOrderListItems = activeOrders.map((order) => (
+    <div key={order.id} className="order-container">
+      <OrderContainer
+        order={order}
+        products={products}
+        showDetail={() => setOrderDetailModalShow(true)}
+        selectOrder={setSelectedOrder}
+      />
+    </div>
+  ));
+
+  const completedOrderListItems = completedOrders.map((order) => (
+    <div key={order.id} className="order-container">
+      <OrderContainer
+        order={order}
+        products={products}
+        showDetail={() => setOrderDetailModalShow(true)}
+        selectOrder={setSelectedOrder}
+      />
+    </div>
+  ))
+
   return (
     <div className="orders-content">
       <div className="place-order-container card order-card">
@@ -50,32 +72,12 @@ const UserOrders = ({ user }) => {
       </div>
       <div className="active-orders card order-card">
         <h1>Active Orders</h1>
-        <div className="active-order-list">
-          {activeOrders.map((order) => (
-            <div key={order.id} className="order-container">
-              <OrderContainer
-                order={order}
-                products={products}
-                showDetail={() => setOrderDetailModalShow(true)}
-                selectOrder={setSelectedOrder}
-              />
-            </div>
-          ))}
-        </div>
+        <div className="active-order-list">{activeOrderListItems}</div>
       </div>
       <div className="completed-orders card order-card">
         <h1>Completed Orders</h1>
         <div className="completed-order-list">
-          {completedOrders.map((order) => (
-            <div key={order.id} className="order-container">
-              <OrderContainer
-                order={order}
-                products={products}
-                showDetail={() => setOrderDetailModalShow(true)}
-                selectOrder={setSelectedOrder}
-              />
-            </div>
-          ))}
+          {completedOrderListItems}
         </div>
       </div>
       <OrderDetailModal
@@ -83,6 +85,7 @@ const UserOrders = ({ user }) => {
         onClose={() => setOrderDetailModalShow(false)}
         selectedOrder={selectedOrder}
         resetOrderState={setSelectedOrder}
+        products={products}
       />
     </div>
   );

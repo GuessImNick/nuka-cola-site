@@ -95,6 +95,18 @@
     justify-content: space-around;
 }
 
+.completed-order-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.shipped-order-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
 .shopping-cart-container .btn {
     border: none;
     border-radius: 5px;

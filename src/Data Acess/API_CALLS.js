@@ -6,6 +6,12 @@ export const API_CALLS = {
     return userOrders;
   },
 
+  fetchOrders: async () => {
+    const res = await fetch("http://localhost:8088/orders");
+    const res1 = await res.json();
+    return res1;
+  },
+
   postNewOrder: async (shoppingCart, user) => {
     const newDate = new Date();
     const orderTimeStamp = newDate.getTime()
@@ -33,4 +39,14 @@ export const API_CALLS = {
     const products = res1;
     return products;
   },
+
+  updateOrder: async (orderId, updatedOrder) => {
+    const res = await fetch(`http://localhost:8088/orders/${orderId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedOrder)
+    })
+  }
 };

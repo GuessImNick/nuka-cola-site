@@ -50,38 +50,40 @@ const OrderForm = ({ products, user, shoppingCart, setShoppingCart }) => {
     }
   }
 
+  const productListItems = products.map((product) => {
+    return (
+      <div
+        className="order-form-product"
+        key={`orderForm--${product.id}`}
+      >
+        {product.productName}
+        <div className="order-form-btn">
+          <input
+            type="number"
+            min="0"
+            max="99"
+            onKeyDown={() => false}
+            placeholder="0"
+            id={`product--${product.id}`}
+          />
+          <button
+            className="btn"
+            onClick={(e) => {
+              e.preventDefault();
+              addToCart(product.id);
+            }}
+          >
+            Add To Cart
+          </button>
+        </div>
+      </div>
+    );
+  })
+
   return (
     <div className="order-form-container">
       <form className="order-form">
-        {products.map((product) => {
-          return (
-            <div
-              className="order-form-product"
-              key={`orderForm--${product.id}`}
-            >
-              {product.productName}
-              <div className="order-form-btn">
-                <input
-                  type="number"
-                  min="0"
-                  max="99"
-                  onKeyDown={() => false}
-                  placeholder="0"
-                  id={`product--${product.id}`}
-                />
-                <button
-                  className="btn"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    addToCart(product.id);
-                  }}
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-          );
-        })}
+        {productListItems}
       </form>
       <div className="shopping-cart">
         <h1>Shopping Cart</h1>

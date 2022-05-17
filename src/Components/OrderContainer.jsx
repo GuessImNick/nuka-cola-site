@@ -20,6 +20,7 @@ const OrderContainer = ({ order, products, showDetail, selectOrder }) => {
     <>
       <h2>Order #: {order.id}</h2>
       <div className="order-products">
+        {/* Add User info section that only shows up for the admins, Company name, address, phone number... etc */}
         <ul>
           {order.orderedProducts.map((product) => {
             return (
@@ -33,10 +34,9 @@ const OrderContainer = ({ order, products, showDetail, selectOrder }) => {
         <ul>
           <li> Orderd On: {dateHelper(order.orderPlacedDate)}</li>
           <li>
-            {order.status === "Completed" ||
-            order.status === "Cancelled" ||
-            order.status === "Denied"
-              ? "Delivered On"
+            {order.status === "Completed" 
+              ? "Delivered On" : order.status === "Cancelled" ||
+              order.status === "Denied" ? "Cancelled/Denied On"
               : "Expected Delivery:"}{" "}
             {dateHelper(order.expectedReceivedDate)}
           </li>

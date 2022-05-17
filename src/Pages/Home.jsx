@@ -29,7 +29,7 @@ const Home = () => {
                 Take the leap and try all new Nuka-Cola Quantum today! Now with
                 double the energy!
               </p>
-              <button className="btn" onClick={() => navigate('/products')}>Veiw Products</button>
+              <button className="btn" onClick={() => navigate('/products')}>View Products</button>
             </div>
           </div>
           <div className="card">

@@ -119,108 +119,12 @@
         {
           "productId": 1,
           "productQuantity": 10
-        },
-        {
-          "productId": 7,
-          "productQuantity": 10
-        }
-      ],
-      "orderPlacedDate": 1652235786540,
-      "expectedReceivedDate": 1652236218540,
-      "status": "Pending",
-      "id": 2
-    },
-    {
-      "userId": 2,
-      "orderedProducts": [
-        {
-          "productId": 1,
-          "productQuantity": 10
-        }
-      ],
-      "orderPlacedDate": 1652236162357,
-      "expectedReceivedDate": 1652236594357,
-      "status": "Pending",
-      "id": 3
-    },
-    {
-      "userId": 2,
-      "orderedProducts": [
-        {
-          "productId": 1,
-          "productQuantity": 10
         }
       ],
       "orderPlacedDate": 1652236205473,
       "expectedReceivedDate": 1652668205473,
-      "status": "Pending",
+      "status": "Shipped",
       "id": 4
-    },
-    {
-      "userId": 2,
-      "orderedProducts": [
-        {
-          "productId": 8,
-          "productQuantity": 10
-        },
-        {
-          "productId": 5,
-          "productQuantity": 10
-        }
-      ],
-      "orderPlacedDate": 1652236277059,
-      "expectedReceivedDate": 1652668277059,
-      "status": "Pending",
-      "id": 5
-    },
-    {
-      "userId": 2,
-      "orderedProducts": [
-        {
-          "productId": 1,
-          "productQuantity": 1
-        },
-        {
-          "productId": 2,
-          "productQuantity": 1
-        },
-        {
-          "productId": 3,
-          "productQuantity": 1
-        },
-        {
-          "productId": 4,
-          "productQuantity": 1
-        },
-        {
-          "productId": 5,
-          "productQuantity": 1
-        },
-        {
-          "productId": 6,
-          "productQuantity": 1
-        },
-        {
-          "productId": 7,
-          "productQuantity": 1
-        },
-        {
-          "productId": 8,
-          "productQuantity": 1
-        },
-        {
-          "productId": 9,
-          "productQuantity": 1
-        },
-        {
-          "productId": 10,
-          "productQuantity": 1
-        }
-      ],
-      "orderPlacedDate": 1652641970589,
-      "expectedReceivedDate": 1653073970589,
-      "status": "Pending",
-      "id": 6
     },
     {
       "userId": 2,
@@ -232,8 +136,38 @@
       ],
       "orderPlacedDate": 1652743479720,
       "expectedReceivedDate": 1653175479720,
-      "status": "Pending",
+      "status": "Cancelled",
       "id": 7
+    },
+    {
+      "userId": 2,
+      "orderedProducts": [
+        {
+          "productId": 8,
+          "productQuantity": 10
+        }
+      ],
+      "orderPlacedDate": 1652746642540,
+      "expectedReceivedDate": 1653178642540,
+      "status": "Pending",
+      "id": 10
+    },
+    {
+      "userId": 2,
+      "orderedProducts": [
+        {
+          "productId": 1,
+          "productQuantity": 5
+        },
+        {
+          "productId": 6,
+          "productQuantity": 5
+        }
+      ],
+      "orderPlacedDate": 1652752035446,
+      "expectedReceivedDate": "2022-05-17T01:48:42.141Z",
+      "status": "Cancelled",
+      "id": 11
     }
   ]
 }

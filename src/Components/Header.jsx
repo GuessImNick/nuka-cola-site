@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import LoginModal from "../modals/LoginModal.jsx";
 import RegisterModal from "../modals/RegisterModal.jsx";
+import { useNavigate } from 'react-router-dom';
 
 const Header = ({ user, setUser }) => {
   const [loginModalShow, setLoginModalShow] = useState(false);
   const [registerModalShow, setRegisterModalShow] = useState(false);
+  let navigate = useNavigate()
 
   const logout = () => {
     localStorage.removeItem("nuka_user");
     setUser();
+    navigate("/")
   };
 
   return (
