@@ -11,6 +11,7 @@ const AdminOrders = ({ user }) => {
   const [completedOrders, setCompletedOrders] = useState([]);
   const [orderDetailModalShow, setOrderDetailModalShow] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState({});
+  const [allUsers, setAllUsers] = useState([])
 
   useEffect(() => {
     API_CALLS.fetchOrders().then((res) => setOrders(res));
@@ -43,6 +44,10 @@ const AdminOrders = ({ user }) => {
     setCompletedOrders(currentCompletedOrders);
   }, [orders]);
 
+  useEffect(() => {
+    API_CALLS.fetchUsers().then((res) => setAllUsers(res));
+  }, [orders]);
+
   const activeOrderListItems = activeOrders.map((order) => (
     <div key={order.id} className="order-container">
       <OrderContainer
@@ -50,6 +55,8 @@ const AdminOrders = ({ user }) => {
         products={products}
         showDetail={() => setOrderDetailModalShow(true)}
         selectOrder={setSelectedOrder}
+        user={user}
+        allUsers={allUsers}
       />
     </div>
   ));
@@ -61,6 +68,8 @@ const AdminOrders = ({ user }) => {
         products={products}
         showDetail={() => setOrderDetailModalShow(true)}
         selectOrder={setSelectedOrder}
+        user={user}
+        allUsers={allUsers}
       />
     </div>
   ));
@@ -72,6 +81,8 @@ const AdminOrders = ({ user }) => {
         products={products}
         showDetail={() => setOrderDetailModalShow(true)}
         selectOrder={setSelectedOrder}
+        user={user}
+        allUsers={allUsers}
       />
     </div>
   ));

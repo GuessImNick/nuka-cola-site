@@ -35,9 +35,9 @@ const Header = ({ user, setUser }) => {
             <li className="nav-item">
               <Link to="/products">Products</Link>
             </li>
-            <li className="nav-item">
+            {user ? <li className="nav-item">
               <Link to="/orders">Order</Link>
-            </li>
+            </li> : null}
             {user ? (
               <li
                 className="btn"

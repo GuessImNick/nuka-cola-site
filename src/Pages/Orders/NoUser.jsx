@@ -2,7 +2,7 @@ import React from 'react'
 
 const NoUser = () => {
   return (
-    <div><h1>Dont give them shit</h1></div>
+    <div className='noUser card'><h1>Please Login or Register to Continue</h1></div>
   )
 }
 

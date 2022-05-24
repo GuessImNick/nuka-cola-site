@@ -19,11 +19,11 @@ export const API_CALLS = {
       userId: user.id,
       orderedProducts: shoppingCart,
       orderPlacedDate: orderTimeStamp,
-      expectedReceivedDate: orderTimeStamp + 432000000,
+      expectedReceivedDate: null,
       status: "Pending",
     };
 
-    const res = await fetch("http://localhost:8088/orders", {
+     await fetch("http://localhost:8088/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,12 +41,18 @@ export const API_CALLS = {
   },
 
   updateOrder: async (orderId, updatedOrder) => {
-    const res = await fetch(`http://localhost:8088/orders/${orderId}`, {
+     await fetch(`http://localhost:8088/orders/${orderId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(updatedOrder)
     })
+  },
+
+  fetchUsers: async () => {
+    const res = await fetch("http://localhost:8088/users");
+    const res1 = await res.json();
+    return res1;
   }
 };

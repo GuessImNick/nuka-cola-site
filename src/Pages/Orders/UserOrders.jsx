@@ -44,6 +44,7 @@ const UserOrders = ({ user }) => {
         products={products}
         showDetail={() => setOrderDetailModalShow(true)}
         selectOrder={setSelectedOrder}
+        user={user}
       />
     </div>
   ));
@@ -55,6 +56,7 @@ const UserOrders = ({ user }) => {
         products={products}
         showDetail={() => setOrderDetailModalShow(true)}
         selectOrder={setSelectedOrder}
+        user={user}
       />
     </div>
   ))

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { API_CALLS } from "../Data Acess/API_CALLS";
 
 const LoginModal = ({ show, onClose, setUser }) => {
   const [loginEmail, setLoginEmail] = useState("");
@@ -15,9 +16,7 @@ const LoginModal = ({ show, onClose, setUser }) => {
 
   const login = async () => {
     if (loginEmail && loginPassword) {
-      const res = await fetch("http://localhost:8088/users");
-      const res1 = await res.json();
-      const users = await res1;
+      const users = await API_CALLS.fetchUsers();
       const foundUser = users.find((user) => {
          return user.email === loginEmail.toLowerCase() && user.password === loginPassword
       })

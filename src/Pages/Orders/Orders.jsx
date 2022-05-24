@@ -8,7 +8,7 @@ const Orders = ({user}) => {
   if(!user) {
     return <NoUser />
   } else if (user.isAdmin === true){
-    return <AdminOrders />
+    return <AdminOrders user={user} />
   } else if(user.isAdmin === false) {
     return <UserOrders user={user} />
   }

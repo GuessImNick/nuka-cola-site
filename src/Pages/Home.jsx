@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Components/Header";
 import { useNavigate } from 'react-router-dom';
 
-const Home = () => {
+const Home = ({user}) => {
   let navigate = useNavigate()
   return (
     <>
