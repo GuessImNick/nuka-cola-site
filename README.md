@@ -13,3 +13,4 @@ This is a class project and will nothing will be sold or distributed in any way.
 
 # Possible features
 - Users can modify orders if the order has been place for less than 72 hours
+- Admins can view user pages and see all orders placed buy the user
